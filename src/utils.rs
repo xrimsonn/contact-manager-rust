@@ -47,9 +47,5 @@ pub fn run_menu(contacts: &mut Vec<Contact>) {
             4 => delete_contact(contacts),
             0 | _ => std::process::exit(0),
         };
-
-        if opt == 0 {
-            break;
-        }
     }
 }
