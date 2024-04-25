@@ -1,5 +1,5 @@
-use crate::Contact;
 use crate::contact::*;
+use crate::Contact;
 use std::io::{self, Write};
 use std::process::Command;
 
