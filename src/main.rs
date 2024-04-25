@@ -1,6 +1,7 @@
 mod contact;
 mod utils;
 use contact::*;
+use utils::run_menu;
 
 fn main() {
     let antonio = Contact {
@@ -19,8 +20,5 @@ fn main() {
     contacts.push(antonio);
     contacts.push(esau);
 
-    print_contact_list(&mut contacts);
-    delete_contact(&mut contacts);
-    print_contact_list(&mut contacts);
+    run_menu(&mut contacts);
 }
-
