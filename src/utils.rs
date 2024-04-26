@@ -29,8 +29,14 @@ pub fn run_menu(contacts: &mut Vec<Contact>) {
     }
 }
 
+#[cfg(target_os = "linux")]
 fn clear_terminal() {
     let _ = Command::new("clear").status();
+}
+
+#[cfg(target_os = "windows")]
+fn clear_terminal() {
+    let _ = Command::new("cls").status();
 }
 
 fn read_num_input(msg: &str) -> i8 {
