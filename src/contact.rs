@@ -1,5 +1,7 @@
 use crate::utils::read_string_input;
+use serde::{Deserialize, Serialize};
 
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Contact {
     pub name: String,
     pub phone_number: String,
@@ -16,9 +18,14 @@ pub fn print_contact(contact: &Contact) {
 
 pub fn print_contact_list(contacts: &mut Vec<Contact>) {
     println!("-------List-------");
-    for contact in contacts.iter() {
-        print_contact(contact);
+    if contacts.len() > 0 {
+        for contact in contacts.iter() {
+            print_contact(contact);
+        }
+    } else {
+        println!("No contacts saved");
     }
+
     print!("\n");
 }
 
